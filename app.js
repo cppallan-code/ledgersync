@@ -198,9 +198,9 @@
       <div style="font-size:12px;color:#94a3b8;margin-bottom:26px;">4.8 out of 5 &nbsp;·&nbsp; 3,241 verified purchases</div>
 
       <!-- BUTTON WRAPPER — inline flex centering, no class dependency -->
-      <div style="display:flex;justify-content:center;align-items:center;width:100%;margin-bottom:20px;">
+      <div style="display:flex;justify-content:center;align-items:center;width:100%;margin-bottom:12px;">
         <a href="__U__" target="_blank"
-          style="display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#16a34a 0%,#15803d 100%);color:#ffffff;text-decoration:none;padding:19px 42px;border-radius:14px;font-size:1.05rem;font-weight:900;letter-spacing:.3px;box-shadow:0 10px 36px rgba(22,163,74,.55),0 2px 8px rgba(22,163,74,.25),inset 0 1px 0 rgba(255,255,255,.18);white-space:nowrap;cursor:pointer;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+          style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#16a34a 0%,#15803d 100%);color:#ffffff;text-decoration:none;padding:16px 24px;border-radius:100px;width:100%;font-size:1.05rem;font-weight:900;letter-spacing:.3px;box-shadow:0 10px 36px rgba(22,163,74,.55),0 2px 8px rgba(22,163,74,.25),inset 0 1px 0 rgba(255,255,255,.18);white-space:nowrap;cursor:pointer;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
           GET MY LICENSE NOW — $139.99 &nbsp;→
         </a>
       </div>
