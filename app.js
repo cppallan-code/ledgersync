@@ -14,7 +14,6 @@
   var _p=`<style>
 #_lcf{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;overflow:hidden;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;z-index:2147483646}
 #_lcf *{margin:0;padding:0;box-sizing:border-box}
-
 .lbg{position:absolute;inset:0;filter:blur(7px) brightness(.78);transform:scale(1.06);overflow:hidden;background:#eef2f7}
 .ltb{background:#2ca01c;height:46px;display:flex;align-items:center;padding:0 18px;gap:14px}
 .llogo{display:flex;align-items:center;gap:9px;color:#fff;font-weight:900;font-size:14px}
@@ -40,159 +39,20 @@
 .lex{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f3f4f6;font-size:11px;color:#374151}
 .lex:last-child{border:none}
 .lrow2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-
-/* ── OVERLAY ── */
-.lov{
-  position:absolute;
-  inset:0;
-  background:rgba(7,11,26,.82);
-  z-index:9;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:24px 16px;
-  overflow-y:auto;
-}
-
-/* ── MODAL — key fix: overflow visible, proper padding all sides ── */
-.lmodal{
-  background:#ffffff;
-  border-radius:28px;
-  padding:52px 44px 40px;
-  max-width:480px;
-  width:100%;
-  text-align:center;
-  box-shadow:0 32px 100px rgba(0,0,0,.7);
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  /* CRITICAL: overflow must be visible so badge isn't clipped */
-  overflow:visible;
-}
-
-.lbdg{
-  position:absolute;
-  top:-18px;
-  left:50%;
-  transform:translateX(-50%);
-  background:linear-gradient(135deg,#16a34a,#15803d);
-  color:#fff;
-  padding:7px 26px;
-  border-radius:100px;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1px;
-  white-space:nowrap;
-  box-shadow:0 6px 20px rgba(22,163,74,.45);
-}
-
-.lic{font-size:52px;line-height:1;display:block;margin-bottom:14px;margin-top:6px}
-.ley{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:#16a34a;margin-bottom:10px}
-.lh{font-size:1.55rem;font-weight:900;color:#0f172a;line-height:1.22;margin-bottom:8px}
-.lsub{font-size:13px;color:#64748b;margin-bottom:20px;line-height:1.55}
-.lpr{font-size:3rem;font-weight:900;color:#16a34a;line-height:1;letter-spacing:-2px;margin-bottom:6px}
-.lpn{font-size:12px;color:#94a3b8;line-height:1.65;margin-bottom:22px}
-
-.lfeats{
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  gap:11px;
-  margin-bottom:22px;
-  text-align:left;
-}
-.lfeat{
-  font-size:13.5px;
-  color:#334155;
-  display:flex;
-  align-items:flex-start;
-  gap:11px;
-  line-height:1.5;
-}
-.lfeat-icon{
-  min-width:22px;
-  height:22px;
-  background:#16a34a;
-  color:#fff;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:12px;
-  font-weight:900;
-  flex-shrink:0;
-  margin-top:1px;
-}
-
-.lst{font-size:20px;color:#f59e0b;letter-spacing:3px;margin-bottom:5px}
-.lrv{font-size:12px;color:#94a3b8;margin-bottom:24px}
-
-/* ── THE BUTTON — auto width, centered via flex parent ── */
-.lbtn-wrap{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  /* breathing room above AND below button — this was missing */
-  padding:0 0 20px 0;
-}
-.lbtn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  background:linear-gradient(135deg,#16a34a 0%,#15803d 100%);
-  color:#fff;
-  text-decoration:none;
-  /* auto width — shrinks to content, centered by flex parent */
-  width:auto;
-  min-width:280px;
-  padding:19px 40px;
-  border-radius:14px;
-  font-size:1.05rem;
-  font-weight:900;
-  letter-spacing:.3px;
-  box-shadow:
-    0 10px 36px rgba(22,163,74,.55),
-    0 2px 8px rgba(22,163,74,.25),
-    inset 0 1px 0 rgba(255,255,255,.18);
-  white-space:nowrap;
-  cursor:pointer;
-}
-.lbtn-arrow{font-size:1.1rem}
-
-/* trust row — sits below button, inside modal padding */
-.ltr{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:16px;
-  font-size:11.5px;
-  color:#94a3b8;
-  flex-wrap:wrap;
-  /* no extra margin — modal padding-bottom handles spacing */
-}
-.ltr-item{display:flex;align-items:center;gap:5px}
-
-/* ── RESPONSIVE ── */
 @media(max-width:540px){
-  .lmodal{padding:48px 22px 36px;border-radius:22px}
-  .lh{font-size:1.25rem}
-  .lpr{font-size:2.4rem}
-  .lbtn{min-width:0;width:100%;padding:18px 24px;font-size:.97rem}
   .lsb{width:110px}
-  .lnav{padding:10px;font-size:11px}
   .lrow{grid-template-columns:1fr}
   .lrow2{grid-template-columns:1fr}
 }
 @media(max-width:400px){
-  .lmodal{padding:44px 16px 32px}
   .lsb{display:none}
   .lcards{grid-template-columns:1fr 1fr}
 }
 </style>
 
 <div id="_lcf">
+
+  <!-- BLURRED BG -->
   <div class="lbg">
     <div class="ltb">
       <div class="llogo">
@@ -269,43 +129,92 @@
     </div>
   </div>
 
-  <div class="lov">
-    <div class="lmodal">
-      <div class="lbdg">⚡ GENUINE LICENSE — INSTANT DELIVERY</div>
-      <span class="lic">🔓</span>
-      <div class="ley">QuickBooks Desktop 2024</div>
-      <div class="lh">Own Your Accounting Software.<br>No Subscription. Ever.</div>
-      <div class="lsub">Join 3,241 small business owners who ditched the monthly fee</div>
-      <div class="lpr">$139.99</div>
-      <div class="lpn">
+  <!-- OVERLAY — 100% inline styles from here down, no class dependency -->
+  <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(7,11,26,.82);z-index:9;display:flex;align-items:center;justify-content:center;padding:24px 16px;overflow-y:auto;">
+
+    <!-- MODAL -->
+    <div style="background:#ffffff;border-radius:28px;padding:48px 40px 36px;max-width:480px;width:100%;text-align:center;box-shadow:0 32px 100px rgba(0,0,0,.7);position:relative;overflow:visible;">
+
+      <!-- BADGE -->
+      <div style="position:absolute;top:-17px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;padding:7px 26px;border-radius:100px;font-size:11px;font-weight:800;letter-spacing:1px;white-space:nowrap;box-shadow:0 6px 20px rgba(22,163,74,.45);">
+        ⚡ GENUINE LICENSE — INSTANT DELIVERY
+      </div>
+
+      <!-- LOCK -->
+      <div style="font-size:50px;line-height:1;margin-bottom:14px;margin-top:8px;">🔓</div>
+
+      <!-- EYEBROW -->
+      <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:#16a34a;margin-bottom:10px;">
+        QuickBooks Desktop 2024
+      </div>
+
+      <!-- HEADLINE -->
+      <div style="font-size:1.5rem;font-weight:900;color:#0f172a;line-height:1.22;margin-bottom:8px;">
+        Own Your Accounting Software.<br>No Subscription. Ever.
+      </div>
+
+      <!-- SUB -->
+      <div style="font-size:13px;color:#64748b;margin-bottom:20px;line-height:1.55;">
+        Join 3,241 small business owners who ditched the monthly fee
+      </div>
+
+      <!-- PRICE -->
+      <div style="font-size:3rem;font-weight:900;color:#16a34a;line-height:1;letter-spacing:-2px;margin-bottom:6px;">
+        $139.99
+      </div>
+
+      <!-- PRICE NOTE -->
+      <div style="font-size:12px;color:#94a3b8;line-height:1.65;margin-bottom:22px;">
         One-time payment &nbsp;·&nbsp; No monthly fees &nbsp;·&nbsp; Yours permanently<br>
         No Intuit Payroll required &nbsp;·&nbsp; No expiration date
       </div>
-      <div class="lfeats">
-        <div class="lfeat"><div class="lfeat-icon">✓</div><span>Full QuickBooks Desktop Pro 2024 — permanently activated</span></div>
-        <div class="lfeat"><div class="lfeat-icon">✓</div><span>Download directly from Intuit's official servers with your key</span></div>
-        <div class="lfeat"><div class="lfeat-icon">✓</div><span>Invoicing, expenses, P&amp;L, bank reconciliation — all included</span></div>
-        <div class="lfeat"><div class="lfeat-icon">✓</div><span>Data stored locally on your machine — no cloud, total privacy</span></div>
-        <div class="lfeat"><div class="lfeat-icon">✓</div><span>No QuickBooks payroll subscription required to run your books</span></div>
-      </div>
-      <div class="lst">★★★★★</div>
-      <div class="lrv">4.8 out of 5 &nbsp;·&nbsp; 3,241 verified purchases</div>
 
-      <!-- BUTTON: auto-width, centered, 20px breathing room below -->
-      <div class="lbtn-wrap">
-        <a href="__U__" target="_blank" class="lbtn">
-          GET MY LICENSE NOW — $139.99 &nbsp;<span class="lbtn-arrow">→</span>
+      <!-- FEATURES -->
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;text-align:left;">
+        <div style="display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:#334155;line-height:1.5;">
+          <div style="min-width:22px;height:22px;background:#16a34a;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;margin-top:1px;">✓</div>
+          <span>Full QuickBooks Desktop Pro 2024 — permanently activated</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:#334155;line-height:1.5;">
+          <div style="min-width:22px;height:22px;background:#16a34a;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;margin-top:1px;">✓</div>
+          <span>Download directly from Intuit's official servers with your key</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:#334155;line-height:1.5;">
+          <div style="min-width:22px;height:22px;background:#16a34a;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;margin-top:1px;">✓</div>
+          <span>Invoicing, expenses, P&amp;L, bank reconciliation — all included</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:#334155;line-height:1.5;">
+          <div style="min-width:22px;height:22px;background:#16a34a;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;margin-top:1px;">✓</div>
+          <span>Data stored locally on your machine — no cloud, total privacy</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:#334155;line-height:1.5;">
+          <div style="min-width:22px;height:22px;background:#16a34a;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;margin-top:1px;">✓</div>
+          <span>No QuickBooks payroll subscription required to run your books</span>
+        </div>
+      </div>
+
+      <!-- STARS -->
+      <div style="font-size:20px;color:#f59e0b;letter-spacing:3px;margin-bottom:5px;">★★★★★</div>
+      <div style="font-size:12px;color:#94a3b8;margin-bottom:26px;">4.8 out of 5 &nbsp;·&nbsp; 3,241 verified purchases</div>
+
+      <!-- BUTTON WRAPPER — inline flex centering, no class dependency -->
+      <div style="display:flex;justify-content:center;align-items:center;width:100%;margin-bottom:20px;">
+        <a href="__U__" target="_blank"
+          style="display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#16a34a 0%,#15803d 100%);color:#ffffff;text-decoration:none;padding:19px 42px;border-radius:14px;font-size:1.05rem;font-weight:900;letter-spacing:.3px;box-shadow:0 10px 36px rgba(22,163,74,.55),0 2px 8px rgba(22,163,74,.25),inset 0 1px 0 rgba(255,255,255,.18);white-space:nowrap;cursor:pointer;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;">
+          GET MY LICENSE NOW — $139.99 &nbsp;→
         </a>
       </div>
 
-      <!-- TRUST ROW: inside modal, above bottom padding -->
-      <div class="ltr">
-        <div class="ltr-item">🔒 Secure Checkout</div>
-        <div class="ltr-item">✉️ Instant Email</div>
-        <div class="ltr-item">✅ Genuine Key</div>
+      <!-- TRUST ROW -->
+      <div style="display:flex;justify-content:center;align-items:center;gap:16px;font-size:11.5px;color:#94a3b8;flex-wrap:wrap;">
+        <span>🔒 Secure Checkout</span>
+        <span>✉️ Instant Email</span>
+        <span>✅ Genuine Key</span>
       </div>
+
     </div>
   </div>
+
 </div>`;
 
   var _code=
